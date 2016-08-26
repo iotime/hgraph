@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.iotime.hgraph</groupId>
+		<artifactId>hgraph</artifactId>
+		<version>${project.release.version}</version>
+		<relativePath>../</relativePath>
+	</parent>
+	<groupId>com.iotime.hgraph.impl</groupId>
+	<artifactId>hgraph-framework-impl</artifactId>
+	<name>hgraph-framework-impl</name>
+	<properties>
+		<maven.deploy.skip>false</maven.deploy.skip>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<spring.data.version>1.8.4.RELEASE</spring.data.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>com.iotime.hgraph.api</groupId>
+			<artifactId>hgraph-framework-api</artifactId>
+			<version>${project.release.version}</version>
+		</dependency>
+		<!-- springframework mongodb data -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-mongodb</artifactId>
+			<version>${spring.data.version}</version>
+			<optional>false</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-mongodb-cross-store</artifactId>
+			<version>${spring.data.version}</version>
+			<optional>false</optional>
+			<exclusions>
+                <exclusion>
+                    <groupId>asm</groupId>
+                    <artifactId>asm</artifactId>
+                </exclusion>
+            </exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-mongodb-log4j</artifactId>
+			<version>${spring.data.version}</version>
+			<optional>false</optional>
+		</dependency>
+	</dependencies>
+</project>
